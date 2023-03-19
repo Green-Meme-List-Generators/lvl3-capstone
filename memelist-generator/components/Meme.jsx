@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 function Meme() {
   const [meme, setMeme] = useState({
