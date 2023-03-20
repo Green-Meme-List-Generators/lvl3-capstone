@@ -51,7 +51,7 @@ function Meme() {
 
   const displayMemes = listMemes.map((meme, index) => (
  <div className="meme-list" key={index}>
-        <img src={meme.randomImage} className="meme--image" />
+        <img src={meme.randomImage} className="meme-list-image" />
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>  
       </div>))
@@ -84,8 +84,8 @@ function Meme() {
       </div>
       <div className="meme">
         <img src={meme.randomImage} className="meme--image" />
-        {/* <h2 className="meme--text top">{meme.topText}</h2>
-        <h2 className="meme--text bottom">{meme.bottomText}</h2>   */}
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>  
       </div>
       <div className="memes-container">{displayMemes}</div>
     

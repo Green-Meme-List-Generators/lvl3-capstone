@@ -8,7 +8,7 @@ body {
 }
 
 main {
-  padding: 36px;
+  outline: 1px solid green;
 }
 
 .header {
@@ -18,6 +18,7 @@ main {
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   color: white;
   padding: 20px;
+  position: relative;
 }
 
 .header--image {
@@ -83,6 +84,11 @@ main {
   justify-self: center;
 }
 
+.meme-list-image {
+  height: 250px;
+  width: 250px;
+}
+
 .meme--text {
   position: absolute;
   width: 80%;
@@ -111,7 +117,9 @@ main {
 .meme-list {
   max-width: 100%;
   border-radius: 3px;
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid red;
 }
 
 .bottom {
