@@ -108,6 +108,12 @@ main {
       2px 2px 5px #000;
 }
 
+.meme-list {
+  max-width: 100%;
+  border-radius: 3px;
+  justify-self: center;
+}
+
 .bottom {
   bottom: 0;
 }

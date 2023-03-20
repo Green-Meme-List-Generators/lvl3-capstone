@@ -7,9 +7,10 @@ function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
   const [allMemes, setAllMemes] = useState([]);
-  // const [listMemes, setListMemes] = useState([])
+  const [listMemes, setListMemes] = useState([])
+ 
 
-  
+ 
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
@@ -35,6 +36,28 @@ function Meme() {
     }));
   }
 
+  function savedList(event) {
+    event.preventDefault();
+    setListMemes((prevListMemes) => {
+      return [...prevListMemes, meme];
+    });
+    setMeme({
+      topText: "",
+      bottomText: "",
+      randomImage: "http://i.imgflip.com/1bij.jpg",
+    });
+  }
+  console.log(listMemes)
+
+  const displayMemes = listMemes.map((meme, index) => (
+ <div className="meme-list" key={index}>
+        <img src={meme.randomImage} className="meme--image" />
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>  
+      </div>))
+
+
+
   return (
     <main>
       <div className="form">
@@ -57,14 +80,15 @@ function Meme() {
         <button className="form--button" onClick={getMemeImage}>
           Get a new meme image 🖼
         </button>
-        <button className="save-button">Save meme</button>
+        <button className="save-button" onClick={savedList}>Save meme</button>
       </div>
       <div className="meme">
         <img src={meme.randomImage} className="meme--image" />
-        <h2 className="meme--text top">{meme.topText}</h2>
-        <h2 className="meme--text bottom">{meme.bottomText}</h2>
-        
+        {/* <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>   */}
       </div>
+      <div className="memes-container">{displayMemes}</div>
+    
     </main>
   );
 }
