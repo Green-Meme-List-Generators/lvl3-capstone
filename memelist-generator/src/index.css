@@ -12,6 +12,11 @@ body {
 
 main {
   outline: 1px solid green;
+  margin-top: 75px;
+  margin-bottom: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+
 }
 
 .header {
@@ -79,6 +84,8 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
+  
 }
 
 .meme--image {
@@ -95,7 +102,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 .meme--text {
@@ -104,7 +111,7 @@ main {
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  margin: 15px 0;
+  margin-bottom: 30px;
   padding: 0 5px;
   font-family: impact, sans-serif;
   font-size: 2em;
@@ -123,6 +130,8 @@ main {
       2px 2px 5px #000;
 }
 
+
+
 .meme-list {
   max-width: 100%;
   border-radius: 3px;
@@ -131,10 +140,11 @@ main {
   flex-direction: column;
   outline: 1px solid red;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .bottom {
-  bottom: 0;
+  bottom: 0
 }
 
 .top {
@@ -144,5 +154,5 @@ main {
 .edit-button {
   display: block;
   width: 50px;
-  
+
 }
