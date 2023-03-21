@@ -5,6 +5,9 @@
 body {
   font-family: "Karla", sans-serif;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 main {
@@ -79,14 +82,20 @@ main {
 }
 
 .meme--image {
+  display: flex;
   max-width: 100%;
   border-radius: 3px;
-  justify-self: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .meme-list-image {
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .meme--text {
@@ -118,8 +127,10 @@ main {
   max-width: 100%;
   border-radius: 3px;
   display: flex;
+  position: relative;
   flex-direction: column;
   outline: 1px solid red;
+  align-items: center;
 }
 
 .bottom {
@@ -128,4 +139,10 @@ main {
 
 .top {
   top: 0;
+}
+
+.edit-button {
+  display: block;
+  width: 50px;
+  
 }

@@ -8,6 +8,7 @@ function Meme() {
   });
   const [allMemes, setAllMemes] = useState([]);
   const [listMemes, setListMemes] = useState([])
+  
  
 
  
@@ -36,6 +37,19 @@ function Meme() {
     }));
   }
 
+  function handleEdit(event) {
+    const memeIndex = event.target.dataset.index
+    const meme = listMemes[memeIndex]
+    setMeme(meme)
+    setListMemes((prevMemes) =>{
+      
+      return listMemes.filter((value, idx) => {
+        console.log(idx != memeIndex)
+        return idx != memeIndex
+      })
+    })
+  }
+
   function savedList(event) {
     event.preventDefault();
     setListMemes((prevListMemes) => {
@@ -54,6 +68,7 @@ function Meme() {
         <img src={meme.randomImage} className="meme-list-image" />
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>  
+        <button className="edit-button" data-index={index} onClick={handleEdit} >Edit</button>
       </div>))
 
 
