@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"
 
 function Meme() {
   const [meme, setMeme] = useState({
@@ -9,15 +10,13 @@ function Meme() {
   const [allMemes, setAllMemes] = useState([]);
   const [listMemes, setListMemes] = useState([])
   
- 
-
- 
-
+  // useEffect function with axios get request to pull top 100 meme images from api
   useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes")
-      .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
-      // console.log(meme)
+    axios
+      .get("https://api.imgflip.com/get_memes")
+      // .then((response) => console.log(response.data.data.memes))
+      .then((response) => setAllMemes(response.data.data.memes))
+      .catch((error) => console.log(error));
   }, []);
 
   function getMemeImage() {
