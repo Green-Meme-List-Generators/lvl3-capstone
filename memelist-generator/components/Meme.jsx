@@ -39,6 +39,7 @@ function Meme() {
   function handleEdit(event) {
     const memeIndex = event.target.dataset.index
     const meme = listMemes[memeIndex]
+    window.scrollTo(0,0)
     setMeme(meme)
     setListMemes((prevMemes) =>{
       
@@ -47,6 +48,13 @@ function Meme() {
         return idx != memeIndex
       })
     })
+  }
+
+  function handleDelete(index) {
+    // console.log(index)
+    setListMemes(listMemes.filter((meme, pos)=> {
+      return index !== pos
+    }))
   }
 
   function savedList(event) {
@@ -68,6 +76,7 @@ function Meme() {
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>  
         <button className="edit-button" data-index={index} onClick={handleEdit} >Edit</button>
+        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
       </div>))
 
 
@@ -95,6 +104,7 @@ function Meme() {
           Get a new meme image 🖼
         </button>
         <button className="save-button" onClick={savedList}>Save meme</button>
+        
       </div>
       <div className="meme">
         <img src={meme.randomImage} className="meme--image" />
