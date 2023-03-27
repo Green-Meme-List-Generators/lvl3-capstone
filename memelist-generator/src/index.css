@@ -151,9 +151,9 @@ main {
   top: 0;
 }
 
-/* #buttons{
+#buttons{
   display: inline-block;
-} */
+}
 .edit-button {
   display: inline-block;
   width: 50px;
