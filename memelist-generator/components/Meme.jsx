@@ -74,10 +74,10 @@ function Meme() {
  <div className="meme-list" key={index}>
         <img src={meme.randomImage} className="meme-list-image" />
         <h2 className="meme--text top">{meme.topText}</h2>
-        <h2 className="meme--text bottom">{meme.bottomText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>  
         <div id="buttons">
-        <button className="edit-button" data-index={index} onClick={handleEdit} >Edit</button>
-        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
+          <button className="edit-button" data-index={index} onClick={handleEdit} >Edit</button>
+          <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
         </div>
       </div>))
 
